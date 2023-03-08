@@ -31,12 +31,13 @@ async function run () {
 
     const embedMsg = {
       color: 3447003,
-      title: `${content.repository_name} | Release ${content.version}`,
-      description: content.body,
-      url: content.html_url
+      title: `**Mise à jour - ${content.version}**`,
+      description: '**Liste des changements (EN)**\n`'+content.body+'`\n**Signification des émojis**\n `🔥 Ajout`, `🔧 Modification`, `🐛 Retrait`',
+      footer: {icon_url: 'https://cdn.blazedev.net/blaze.png', text: '• Blaze'},
+      timestamp: Date.now()
     }
 
-    const body = { embeds: [embedMsg] }
+    const body = {username: 'Mise à jour - Blaze', embeds: [embedMsg] }
 
     const url = `https://discord.com/api/webhooks/${core.getInput('webhook_id')}/${core.getInput('webhook_token')}?wait=true`
 
