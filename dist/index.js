@@ -1,3 +1,5 @@
+const { timeStamp } = require("console");
+
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -5947,6 +5949,7 @@ async function run () {
   try {
     const webhookId = core.getInput('webhook_id')
     const webhookToken = core.getInput('webhook_token')
+    const time_date = core.getInput('time_stamp')
 
     if (!webhookId || !webhookToken) {
       return core.setFailed('webhook ID or TOKEN are not configured correctly. Verify config file.')
@@ -5958,7 +5961,8 @@ async function run () {
       color: 3447003,
       title: `**Mise à jour - ${content.version}**`,
       description: '**Liste des changements (EN)**\n```'+content.body+'```\n**Signification des émojis**\n `🔥 Ajout`, `🔧 Modification`, `🐛 Retrait`',
-      footer: {icon_url: 'https://cdn.blazedev.net/1.png', text: '• Blaze'}
+      footer: {icon_url: 'https://cdn.blazedev.net/1.png', text: 'Blaze •'},
+      timestamp: time_date
     }
 
     const body = {username: 'Mise à jour - Blaze', embeds: [embedMsg]}
