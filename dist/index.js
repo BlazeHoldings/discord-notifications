@@ -5957,8 +5957,8 @@ async function run () {
     const embedMsg = {
       color: 3447003,
       title: `**Mise à jour - ${content.version}**`,
-      description: '**Liste des changements (EN)**\n`'+content.body+'`\n**Signification des émojis**\n `🔥 Ajout`, `🔧 Modification`, `🐛 Retrait`',
-      footer: {icon_url: 'https://cdn.blazedev.net/blaze.png', text: '• Blaze'}
+      description: '**Liste des changements (EN)**\n```'+content.body+'```\n**Signification des émojis**\n `🔥 Ajout`, `🔧 Modification`, `🐛 Retrait`',
+      footer: {icon_url: 'https://cdn.blazedev.net/1.png', text: '• Blaze'}
     }
 
     const body = {username: 'Mise à jour - Blaze', embeds: [embedMsg]}
